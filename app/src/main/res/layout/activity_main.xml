@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/bg"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/tvDers"
+            android:layout_width="229dp"
+            android:popupBackground="@color/colorAccent"
+            android:textColorHint="@android:color/white"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:hint="Ders Adını Giriniz..."
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnEkle"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btnadd"
+            android:height="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDers"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spnKredi"
+            android:layout_width="125dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/colorAccent"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:popupBackground="@color/colorAccent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDers"
+            android:entries="@array/krediler"
+            />
+
+        <Spinner
+            android:id="@+id/spnHarf"
+            android:layout_width="90dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:popupBackground="@color/colorAccent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_marginStart="8dp"
+            android:entries="@array/tumNotlar"
+            app:layout_constraintBottom_toBottomOf="@+id/spnKredi"
+            app:layout_constraintStart_toEndOf="@+id/spnKredi" />
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorAccent">
+
+    </View>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearParent"
+            >
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnHesapla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="ortalamaHesapla"
+        android:background="@drawable/hesapla_btn"
+         />
+</LinearLayout>
